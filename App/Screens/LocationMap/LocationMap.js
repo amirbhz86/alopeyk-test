@@ -110,7 +110,7 @@ const styles = () => {
       ...HelperStyles.center,
     },
     btnWrapper: {
-      width: '90%',
+      width: '80%',
       alignSelf: 'center',
       backgroundColor: colors.blue,
       borderRadius: layout.generalRadius,
