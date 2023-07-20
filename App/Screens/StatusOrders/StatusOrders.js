@@ -112,10 +112,7 @@ const StatusOrders = props => {
             <View style={[s.statusContainer, renderBgColor(item.status)]}>
               <CustomText light>{renderStatusText(item.status)}</CustomText>
             </View>
-            <Image
-              source={require('../../Assets/Images/mobile-1.jpg')}
-              style={s.productImage}
-            />
+            <Image source={item?.image} style={s.productImage} />
           </View>
         </View>
       </Animatable.View>
@@ -167,8 +164,8 @@ const s = StyleSheet.create({
   productImage: {
     width: 50,
     height: 50,
+    resizeMode: 'contain',
     borderRadius: layout.generalRadius,
-    backgroundColor: 'red',
   },
   listContainer: {
     flex: 1,
