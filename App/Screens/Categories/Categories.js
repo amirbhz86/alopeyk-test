@@ -1,6 +1,6 @@
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, StyleSheet, FlatList } from 'react-native';
 import CateogryItem from './Components/CateogryItem';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { DATA } from '../../../DATA';
 import HelperStyles from '../../DesignTokens/HelperStyles';
 import { colors } from '../../DesignTokens/colors';

@@ -1,5 +1,5 @@
-import { View, Text, StyleSheet } from 'react-native';
-import React, { useState } from 'react';
+import { StyleSheet } from 'react-native';
+import React from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import HelperStyles from '../../../DesignTokens/HelperStyles';
 import * as Animatable from 'react-native-animatable';

@@ -4,8 +4,7 @@ import Header from './Components/Header';
 import { colors } from '../../DesignTokens/colors';
 import CustomText from '../../Components/Text';
 import { height, layout } from '../../DesignTokens/layout';
-import { useIsFocused } from '@react-navigation/native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useIsFocused, useRoute } from '@react-navigation/native';
 import { INITIAL_REQUESTS, KEYS } from '../../Constants/Constants';
 import HelperStyles from '../../DesignTokens/HelperStyles';
 import * as Animatable from 'react-native-animatable';
@@ -13,7 +12,7 @@ let intervallApi;
 
 const StatusOrders = props => {
   const { navigation } = props;
-  const route = props.route;
+  const params = props.route.params;
   const isFocused = useIsFocused;
   const [requests, setRequests] = useState(INITIAL_REQUESTS);
 
@@ -59,7 +58,8 @@ const StatusOrders = props => {
   };
 
   const getRequests = () => {
-    let newRequests = requests.map(value => {
+    let newRequests = [...requests];
+    newRequests = newRequests.map(value => {
       return {
         ...value,
         status: renderStatus(Math.floor(Math.random() * 1000) % 4),
@@ -68,15 +68,37 @@ const StatusOrders = props => {
     setRequests(newRequests);
   };
 
+  const addToRequests = () => {
+    setRequests(prev => {
+      return [
+        ...prev,
+        {
+          price: params?.price,
+          code: params.code,
+          image: params.image,
+          status: 'PENDING',
+          date: new Date().toLocaleDateString('fa-IR'),
+        },
+      ];
+    });
+  };
+
   useEffect(() => {
-    if (isFocused) {
+    if (params) {
+      addToRequests();
+    }
+  }, [params]);
+
+  useEffect(() => {
+    if (isFocused && requests.length > 0) {
+      clearInterval(intervallApi);
       intervallApi = setInterval(() => {
         getRequests();
       }, 30000);
     } else {
       clearInterval(intervallApi);
     }
-  }, [isFocused]);
+  }, [isFocused, requests]);
 
   const EmptyComponent = () => {
     return (

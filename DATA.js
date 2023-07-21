@@ -40,24 +40,28 @@ export const MOBILE_DATA = [
     title: 'گوشی موبایل سامسونگ مدل Galaxy S20 FE',
     stars: '۴.۲',
     price: '۱۴,۹۰۰,۰۰۰',
+    code: '۳۴۷۷۶۳۵۶۷۶۴۸',
   },
   {
     image: require('./App/Assets/Images/mobile-2.jpg'),
     title: 'گوشی موبایل اپل مدل CH iphone 13',
     stars: '۴.۷',
     price: '۱۲,۰۰۰,۰۰۰',
+    code: '۶۷۳۲۶۴۷۶۴۸۳',
   },
   {
     image: require('./App/Assets/Images/mobile-3.jpg'),
     title: 'گوشی موبایل سامسونگ مدل A14 Galaxy',
     stars: '۳.۵',
     price: '۸,۵۰۰,۰۰۰',
+    code: '۶۷۶۷۸۷۶۷۶۶',
   },
   {
     image: require('./App/Assets/Images/mobile-4.jpg'),
     title: 'گوشی موبایل شیایومی مدل Redmi Note 12',
     stars: '۳.۴',
     price: '۲۳,۰۰۰,۰۰۰',
+    code: '۳۴۵۷۹۲۸۴۷۳',
   },
   {
     image: require('./App/Assets/Images/mobile-1.jpg'),
@@ -70,11 +74,13 @@ export const MOBILE_DATA = [
     title: 'گوشی موبایل اپل مدل CH iphone 13',
     stars: '۴.۷',
     price: '۱۲,۰۰۰,۰۰۰',
+    code: '۸۷۹۸۷۷۳۹۴۳۸',
   },
   {
     image: require('./App/Assets/Images/mobile-3.jpg'),
     title: 'گوشی موبایل سامسونگ مدل A14 Galaxy',
     stars: '۳.۵',
     price: '۸,۵۰۰,۰۰۰',
+    code: '۷۲۹۷۲۴۹۸۳۷',
   },
 ];

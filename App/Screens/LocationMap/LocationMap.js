@@ -11,26 +11,15 @@ import CustomPressable from '../../Components/Pressable';
 import HelperStyles from '../../DesignTokens/HelperStyles';
 
 const Map = props => {
-  const {
-    searchView,
-    mapStyle,
-    performanceText,
-    inputView,
-    inputStyle,
-    inputWrapper,
-    bottomView,
-    locationPress,
-    locationInnerStyle,
-    selectText,
-    markerSvg,
-  } = styles();
+  const { mapStyle, inputView, inputStyle, inputWrapper, markerSvg } = styles();
   const s = styles();
   const { navigation, showButton } = props;
+  const params = props?.route?.params;
   const [region, setRegion] = useState(undefined);
   const opacityValue = useRef(new Animated.Value(0.5)).current;
 
   const goToRequests = () => {
-    navigation.navigate('STATUS_ORDERS_SCREEN');
+    navigation.navigate('STATUS_ORDERS_SCREEN', { ...params });
   };
 
   return (

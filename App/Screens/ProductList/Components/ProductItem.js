@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet, Image } from 'react-native';
 import React from 'react';
 import HelperStyles from '../../../DesignTokens/HelperStyles';
 import CustomText from '../../../Components/Text';
@@ -12,13 +12,18 @@ import { colors } from '../../../DesignTokens/colors';
 import * as Animatable from 'react-native-animatable';
 
 const ProductItem = props => {
-  const { image, title, stars, price, index, navigation, listRef } = props;
+  const { image, title, stars, price, index, navigation, listRef, code } = props;
   const s = styles(index);
 
   const goToMap = () => {
     listRef.current.animate('fadeOutLeft', 600);
     setTimeout(() => {
-      navigation.navigate('LOCATION_MAP_SCREEN');
+      navigation.navigate('LOCATION_MAP_SCREEN', {
+        price,
+        code,
+        title,
+        image,
+      });
     }, 600);
     setTimeout(() => {
       listRef.current.animate('fadeInLeft', 600);

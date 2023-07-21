@@ -82,7 +82,6 @@ const VerticalOrHorizontalInputLogin = forwardRef((props, ref) => {
           <PressableRadius
             rippleBackgroundColor={'#FF7515'}
             wrapperStyle={wrapprEyePress}
-            onPress={() => console.log('dajsdhskja')}
             innerStyle={innerEyePress}>
             {/* {showInput
                 ? <EyeSlash width={15} height={15} />

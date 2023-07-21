@@ -1,4 +1,4 @@
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { View, FlatList, StyleSheet } from 'react-native';
 import React, { useRef } from 'react';
 import ProductItem from './Components/ProductItem';
 import { MOBILE_DATA } from '../../../DATA';
@@ -13,8 +13,7 @@ const ProductListScreen = props => {
 
   const backPress = () => {
     // listRef.current.animate('fadeOutRight' , 600 )
-
-  }
+  };
 
   return (
     <View style={s.container}>
@@ -34,6 +33,7 @@ const ProductListScreen = props => {
                   stars={item.stars}
                   image={item.image}
                   index={index}
+                  code={item.code}
                   navigation={navigation}
                   listRef={listRef}
                 />
